@@ -4,9 +4,12 @@
 \alias{lib_summary}
 \title{R Library Summary}
 \usage{
-lib_summary(sizes = FALSE)
+lib_summary(..., sizes = FALSE)
 }
 \arguments{
+\item{...}{Grouping variables for the summary. Zero or more of the column
+names from \code{\link[=lib]{lib()}}.}
+
 \item{sizes}{Should the sizes of the libraries be calculated?
 Logical; default \code{FALSE}.}
 }

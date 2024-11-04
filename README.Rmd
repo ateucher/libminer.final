@@ -33,12 +33,25 @@ devtools::install_github("ateucher/libminer")
 
 ## Example usage
 
-To get a count of installed packages in each of your library locations, 
-optionally with the total sizes, use the `lib_summary()` function:
+
+To get a nicely formatted tibble of your installed packages, use the `lib()`
+function:
+
+```{r}
+library(libminer)
+lib()
+```
+
+
+To get a count of installed packages, grouped by any combination of variables
+in the `lib()` data.frame, optionally with the total sizes, use the `lib_summary()` function:
 
 ```{r example}
-library(libminer)
-lib_summary()
-# specify `sizes = TRUE` to calculate the total size on disk of your packages
-lib_summary(sizes = TRUE)
+lib_summary(LibPath, License)
+```
+
+Specify `sizes = TRUE` to calculate the total size on disk of your packages
+
+```{r}
+lib_summary(LibPath, NeedsCompilation, sizes = TRUE)
 ```
